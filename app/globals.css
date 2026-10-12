@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #141414;
+  --color-muted: #6f6a64;
+  --color-line: #e6dfd6;
+  --color-raise: #fbf8f4;
+  --color-paper: #f4efe8;
+  --color-accent: #e23b22;
+  --color-danger: #d12b2b;
+  --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+html {
+  color-scheme: light;
+  background: #f4efe8;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4efe8;
+}
+
+::selection {
+  background: #141414;
+  color: #fff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes pulse-dot {
+  70% {
+    box-shadow: 0 0 0 8px rgba(197, 52, 42, 0);
+  }
+}
+
+.live-dot {
+  animation: pulse-dot 1.8s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
